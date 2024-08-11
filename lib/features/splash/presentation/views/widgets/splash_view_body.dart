@@ -62,7 +62,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       () {
         Get.to(
           () => const HomeView(),
-          transition: Transition.circularReveal,
+          transition: Transition.downToUp,
           duration: kTransitionDuration,
         );
       },
