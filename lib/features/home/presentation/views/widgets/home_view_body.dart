@@ -11,6 +11,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: scrollController,
+      physics: const BouncingScrollPhysics(),
       slivers: const [
         SliverToBoxAdapter(
           child: Padding(
