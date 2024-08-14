@@ -56,7 +56,9 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 38,
         ),
-        const BooksAction(),
+        BooksAction(
+          bookUrl: book.volumeInfo.previewLink!,
+        ),
       ],
     );
   }
