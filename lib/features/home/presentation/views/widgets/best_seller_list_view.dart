@@ -20,13 +20,13 @@ class BestSellerListView extends StatelessWidget {
                   book: state.books[index],
                 ),
               ),
-              childCount: 10,
+              childCount: state.books.length,
             ),
           );
         } else if (state is NewestBooksFailureState) {
-          return SliverToBoxAdapter(child: CustomErrorWidget(state.errMsg));
+          return SliverFillRemaining(child: CustomErrorWidget(state.errMsg));
         } else {
-          return const SliverToBoxAdapter(
+          return const SliverFillRemaining(
             child: Center(
               child: CircularProgressIndicator(),
             ),

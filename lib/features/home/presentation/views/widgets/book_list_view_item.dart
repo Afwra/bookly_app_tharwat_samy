@@ -19,7 +19,8 @@ class BookListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+                imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
             const SizedBox(
               width: 30,
             ),
@@ -44,7 +45,7 @@ class BookListViewItem extends StatelessWidget {
                   Text(
                     book.volumeInfo.authors![0],
                     style: AppStyles.textStyle14,
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(
@@ -59,8 +60,8 @@ class BookListViewItem extends StatelessWidget {
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       BookRating(
-                        rating: 4.8,
-                        count: 1234,
+                        rating: book.volumeInfo.averageRating ?? 0.0,
+                        count: book.volumeInfo.ratingsCount ?? 0.0,
                       ),
                     ],
                   )
